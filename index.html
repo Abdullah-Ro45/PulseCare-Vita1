@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker - Login / Register</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="auth-container card">
+        <h1 class="text-center">Pulsecare Vita</h1>
+        <h2 id="authTitle" class="text-center">Login</h2>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" required>
+            </div>
+            <div class="input-group">
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button type="submit" class="primary-button full-width">Login</button>
+        </form>
+
+        <form id="registerForm" class="hidden">
+            <div class="input-group">
+                <label for="registerUsername">Username:</label>
+                <input type="text" id="registerUsername" required>
+            </div>
+            <div class="input-group">
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" required>
+            </div>
+            <div class="input-group">
+                <label for="registerPassword">Password:</label>
+                <input type="password" id="registerPassword" required>
+            </div>
+            <div class="input-group">
+                <label for="registerGender">Gender:</label>
+                <select id="registerGender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="registerWeight">Current Weight (kg):</label>
+                <input type="number" id="registerWeight" step="0.1" required>
+            </div>
+            <div class="input-group">
+                <label for="registerHeight">Height (cm):</label>
+                <input type="number" id="registerHeight" step="0.1" required>
+            </div>
+            <div class="input-group">
+                <label for="registerDob">Date of Birth:</label>
+                <input type="date" id="registerDob" required>
+            </div>
+            <button type="submit" class="primary-button full-width">Register</button>
+        </form>
+
+        <p id="authMessage" class="message hidden"></p>
+
+        <div class="auth-toggle">
+            <p>
+                <span id="toggleText">Don't have an account?</span>
+                <a href="#" id="toggleAuthMode">Register</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/api.js" type="module"></script>
+    <script src="js/auth.js" type="module"></script>
+</body>
+</html>

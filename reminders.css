@@ -1,0 +1,120 @@
+/* frontend/css/reminders.css */
+
+/* Specific styles for the reminders page */
+
+.reminder-setting {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.reminder-setting:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.reminder-setting h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.reminder-setting .input-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.reminder-setting .input-group label {
+    margin-bottom: 0; /* Remove bottom margin in flex layout */
+    flex-shrink: 0; /* Prevent label from shrinking */
+}
+
+.reminder-setting .input-group input[type="number"],
+.reminder-setting .input-group input[type="time"] {
+    flex-grow: 1; /* Allow input to grow */
+    max-width: 150px; /* Limit input width */
+}
+
+.reminder-setting button {
+    margin-right: 10px; /* Space between buttons */
+    margin-top: 5px; /* Add a little space above buttons */
+}
+
+.reminder-setting .message {
+    margin-top: 15px;
+}
+
+#activeRemindersList .reminder-item {
+    background-color: #333333; /* Light blue background */
+    border: 1px solid #dde;
+    border-radius: 5px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#activeRemindersList .reminder-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-color);
+    flex-grow: 1; /* Allow text to grow */
+    margin-right: 10px; /* Space between text and buttons */
+}
+
+#activeRemindersList .reminder-item .actions {
+     display: flex;
+     gap: 10px;
+     flex-shrink: 0; /* Prevent actions from shrinking */
+}
+
+#activeRemindersList .reminder-item button {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+}
+
+/* Styles for active/inactive toggle button */
+.toggle-reminder-btn[data-active="true"] {
+    background-color: var(--error-color); /* Red when active (to deactivate) */
+}
+
+.toggle-reminder-btn[data-active="true"]:hover {
+    background-color: #c82333;
+}
+
+.toggle-reminder-btn[data-active="false"] {
+    background-color: var(--success-color); /* Green when inactive (to activate) */
+}
+
+.toggle-reminder-btn[data-active="false"]:hover {
+    background-color: #218838;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .reminder-setting .input-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+     .reminder-setting .input-group input[type="number"],
+     .reminder-setting .input-group input[type="time"] {
+         max-width: 100%; /* Allow inputs to take full width */
+     }
+     #activeRemindersList .reminder-item {
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 10px;
+     }
+     #activeRemindersList .reminder-item p {
+         margin-right: 0;
+     }
+}

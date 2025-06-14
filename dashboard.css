@@ -1,0 +1,118 @@
+/* frontend/css/dashboard.css */
+
+/* Specific styles for the dashboard page */
+
+/* Dashboard Summary Section */
+.dashboard-summary .summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+    margin-top: 20px;
+}
+
+.summary-card {
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.6); /* Use background color for inner cards */
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+.summary-card h3 {
+    color: var(--secondary-color); /* Green for summary titles */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.summary-card .summary-value {
+    font-size: 2rem; /* Larger font for values */
+    font-weight: bold;
+    margin: 5px 0;
+    color: var(--primary-color); /* Blue for values */
+}
+
+.summary-card .summary-unit {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    margin-top: 0;
+}
+
+/* Specific colors for Net Calories and Estimated Needs */
+.summary-card.net-calories .summary-value {
+    color: #e67e22; /* Orange */
+}
+
+.summary-card.estimated-calories .summary-value {
+    color: #9b59b6; /* Purple */
+}
+
+
+/* Quick Links Section */
+.quick-links-section h2 {
+    margin-bottom: 20px;
+}
+
+.quick-links {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 15px; /* Space between buttons */
+    justify-content: center; /* Center buttons */
+}
+
+.quick-link-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 20px; /* Larger padding for buttons */
+    border-radius: 5px;
+    transition: opacity 0.2s ease;
+}
+
+.quick-link-button i {
+    font-size: 1.1rem;
+}
+
+/* Your Stats Section */
+.your-stats-section h2 {
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for stats */
+    gap: 15px; /* Space between stat items */
+}
+
+.stat-item {
+    background-color:  rgba(0, 0, 0, 0.6); /* Use background color for items */
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.stat-item strong {
+    color: var(--primary-color); /* Primary color for labels */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-summary .summary-cards {
+        grid-template-columns: 1fr; /* Stack cards on small screens */
+    }
+
+    .quick-links {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        align-items: stretch; /* Stretch buttons to full width */
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr; /* Stack stats vertically on small screens */
+    }
+}

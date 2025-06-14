@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Fitness Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2>Pulsecase Vita</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="dashboard.html" ><i class="fas fa-home"></i> Home</a></li> 
+                <li><a href="profile.html"class="active"><i class="fas fa-user"></i> Profile</a></li>                
+                <li><a href="meal_tracker.html"><i class="fas fa-utensils"></i> Meal Tracker</a></li>
+                <li><a href="activity_tracker.html"><i class="fas fa-running"></i> Activity Tracker</a></li>
+                <li><a href="progress_tracker.html"><i class="fas fa-chart-line"></i> Progress Tracker</a></li>
+                <li><a href="bmi_calculator.html"><i class="fas fa-calculator"></i> BMI Calculator</a></li>                
+                <li><a href="reminders.html"><i class="fas fa-bell"></i> Reminders</a></li>
+                <li><a href="exercises.html"><i class="fas fa-dumbbell"></i> Exercises</a></li>
+                <li><a href="wellness_videos.html"><i class="fas fa-heartbeat"></i> Wellness Videos</a></li>
+                <li><a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <h1>Your Profile</h1>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Profile Information</h2>
+                <form id="profileForm">
+                    <div class="input-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="currentWeight">Current Weight (kg):</label>
+                        <input type="number" id="currentWeight" step="0.1" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="height">Height (cm):</label>
+                        <input type="number" id="height" step="0.1" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob">
+                    </div>
+                    <div class="input-group">
+                        <label for="weightGoal">Weight Goal (kg):</label>
+                        <input type="number" id="weightGoal" step="0.1" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="activityLevel">Activity Level:</label>
+                        <select id="activityLevel">
+                            <option value="Sedentary">Sedentary (little to no exercise)</option>
+                            <option value="Lightly Active">Lightly Active (light exercise/sports 1-3 days/week)</option>
+                            <option value="Moderately Active">Moderately Active (moderate exercise/sports 3-5 days/week)</option>
+                            <option value="Very Active">Very Active (hard exercise/sports 6-7 days a week)</option>
+                            <option value="Extra Active">Extra Active (very hard exercise/physical job)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="primary-button">Update Profile</button>
+                    <p id="profileMessage" class="message hidden"></p>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/dashboard_common.js" type="module"></script>
+    <script src="js/profile.js" type="module"></script>
+</body>
+</html>

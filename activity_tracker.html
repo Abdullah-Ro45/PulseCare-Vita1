@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Tracker - Fitness Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/activity_tracker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2>Pulsecase Vita</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+               <li><a href="dashboard.html" ><i class="fas fa-home"></i> Home</a></li> 
+                <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>                
+                <li><a href="meal_tracker.html"><i class="fas fa-utensils"></i> Meal Tracker</a></li>                
+                <li><a href="activity_tracker.html"class="active"><i class="fas fa-running"></i> Activity Tracker</a></li>
+                <li><a href="progress_tracker.html"><i class="fas fa-chart-line"></i> Progress Tracker</a></li>
+                <li><a href="bmi_calculator.html"><i class="fas fa-calculator"></i> BMI Calculator</a></li>                
+                <li><a href="reminders.html"><i class="fas fa-bell"></i> Reminders</a></li>
+                <li><a href="exercises.html"><i class="fas fa-dumbbell"></i> Exercises</a></li>
+                <li><a href="wellness_videos.html"><i class="fas fa-heartbeat"></i> Wellness Videos</a></li>
+                <li><a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <h1>Activity Tracker</h1>
+        </header>
+
+        <main>
+            <section class="date-navigation card">
+                <button id="prevActivityDayBtn" class="secondary-button">&laquo; Prev Day</button>
+                <input type="date" id="activityDateInput">
+                <button id="nextActivityDayBtn" class="secondary-button">Next Day &raquo;</button>
+            </section>
+
+            <section class="add-activity-section card">
+                <h2>Log a New Activity</h2>
+                <div class="input-group">
+                    <label for="activityTypeSelect">Activity Type:</label>
+                    <select id="activityTypeSelect">
+                        </select>
+                </div>
+                <div class="input-group">
+                    <label for="durationMinutesInput">Duration (minutes):</label>
+                    <input type="number" id="durationMinutesInput" placeholder="e.g., 30" min="1" step="1">
+                </div>
+                <div class="input-group">
+                    <p>Estimated Calories Burnt: <span id="estimatedCalories">0.0</span> kcal</p>
+                </div>
+                <button id="addActivityBtn" class="primary-button">Add Activity</button>
+                 <button id="cancelActivityEditBtn" class="secondary-button" style="display: none;">Cancel Edit</button>
+                <p id="activityAddMessage" class="message hidden"></p>
+            </section>
+
+            <section class="daily-summary-section card">
+                <h2>Daily Activity Summary</h2>
+                <div class="summary-totals">
+                    <p>Total Calories Burnt: <span id="totalDailyCaloriesBurnt">0</span> kcal</p>
+                </div>
+                <div id="activityLog" class="activity-log">
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/dashboard_common.js" type="module"></script>
+    <script src="js/activity_tracker.js" type="module"></script>
+</body>
+</html>

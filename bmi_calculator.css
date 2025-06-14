@@ -1,0 +1,97 @@
+/* frontend/css/bmi_calculator.css */
+
+/* Specific styles for the BMI calculator page */
+
+.bmi-calculator-form {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.bmi-calculator-form .input-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.bmi-calculator-form .input-group label {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    width: 100px; /* Give labels a fixed width */
+}
+
+.bmi-calculator-form .input-group input[type="number"] {
+    flex-grow: 1; /* Allow input to grow */
+    max-width: 150px; /* Limit input width */
+}
+
+.bmi-result-section {
+    margin-top: 20px;
+}
+
+.bmi-result-section h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.bmi-result-section h3 span {
+    font-weight: bold;
+}
+
+.bmi-result-section p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.bmi-result-section p span {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.bmi-categories h4 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.bmi-categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--light-text-color);
+}
+
+.bmi-categories ul li {
+    margin-bottom: 5px;
+}
+
+.bmi-categories .disclaimer {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #888;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .bmi-calculator-form .input-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+     .bmi-calculator-form .input-group label {
+         width: auto; /* Remove fixed width on small screens */
+     }
+     .bmi-calculator-form .input-group input[type="number"] {
+         max-width: 100%; /* Allow inputs to take full width */
+     }
+}

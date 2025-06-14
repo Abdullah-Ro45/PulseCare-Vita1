@@ -1,0 +1,185 @@
+/* frontend/css/meal_tracker.css */
+
+/* Specific styles for the meal tracker page */
+
+/* Date Navigation */
+.date-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.date-navigation input[type="date"] {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    flex-grow: 1;
+    max-width: 200px;
+    text-align: center;
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+/* .date-navigation button inherits styles from .secondary-button in style.css */
+
+/* Add Meal Section */
+.add-meal-section .input-group {
+    margin-bottom: 15px;
+}
+
+.food-search-results-container {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #121212; /* Use a slightly different background */
+}
+
+.food-search-item:focus {
+    color: #ffffff;
+    outline: 2px solid var(--primary-color);
+    background-color: #e0e0ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border-bottom: 1px dashed var(--border-color);
+    cursor: pointer; /* Indicate clickable */
+    transition: background-color 0.2s ease;
+}
+
+.food-search-item:hover {
+    background-color: #333333; /* Light hover effect */
+}
+
+.food-search-item:last-child {
+    border-bottom: none;
+}
+
+.food-search-item span {
+    font-weight: bold;
+    color: #ffffff;
+    flex-grow: 1; /* Allow name to take space */
+    margin-right: 10px; /* Space between name and button */
+}
+
+#selectedFoodName {
+    display: block;
+    margin-top: 5px;
+    font-style: italic;
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+}
+
+/* Daily Summary Section */
+.daily-summary-section .summary-totals {
+    background-color: #e9f7ef; /* Light green for emphasis */
+    border: 1px solid #d4edda;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--success-color); /* Green text */
+}
+
+.daily-summary-section .summary-totals p {
+    margin: 5px 0;
+}
+
+.meal-log {
+    margin-top: 20px;
+}
+
+.meal-type-group {
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: var(--card-background);
+}
+
+.meal-type-group h3 {
+    color: var(--secondary-color); /* Use secondary color for meal type headers */
+    margin-top: 0;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+}
+
+.meal-item {
+    padding: 15px 10px;
+    border-bottom: 1px solid #f0f0f0; /* Lighter border for items */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out details and actions */
+    align-items: center; /* Vertically align items */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 10px; /* Space between details and actions */
+}
+
+.meal-item:last-child {
+    border-bottom: none;
+}
+
+.meal-item .meal-details {
+    flex-grow: 1; /* Allow details to take available space */
+}
+
+.meal-item .meal-details p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.meal-item .meal-details p strong {
+    color: var(--primary-color); /* Use primary color for food name */
+}
+
+.meal-item .actions {
+    display: flex;
+    gap: 5px; /* Space between buttons */
+    flex-shrink: 0; /* Prevent actions from shrinking */
+}
+
+.meal-item .actions button {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .date-navigation {
+        flex-wrap: wrap;
+    }
+    .date-navigation input[type="date"] {
+        max-width: 100%;
+    }
+    .add-meal-section, .daily-summary-section {
+        padding: 15px;
+    }
+     .meal-item {
+         flex-direction: column;
+         align-items: flex-start;
+     }
+     .meal-item .meal-details {
+         width: 100%; /* Details take full width */
+         margin-right: 0;
+     }
+     .meal-item .actions {
+         width: 100%; /* Actions take full width */
+         justify-content: flex-end; /* Align buttons to the right */
+     }
+}

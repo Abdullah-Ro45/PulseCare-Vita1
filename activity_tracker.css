@@ -1,0 +1,137 @@
+/* frontend/css/activity_tracker.css */
+
+/* Specific styles for the activity tracker page */
+
+/* Date Navigation */
+.date-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.date-navigation input[type="date"] {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    flex-grow: 1;
+    max-width: 200px;
+    text-align: center;
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+/* .date-navigation button inherits styles from .secondary-button in style.css */
+
+
+/* Add Activity Section */
+.add-activity-section .input-group {
+    margin-bottom: 15px;
+}
+
+.activity-calories-preview {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fff3cd; /* Light yellow for emphasis */
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #856404; /* Dark yellow text */
+}
+
+.activity-calories-preview span {
+    color: #000; /* Black or dark color for the value */
+}
+
+/* Daily Activity Log Section */
+.daily-activity-log-section .summary-totals {
+    background-color: #d4edda; /* Light green for emphasis */
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--success-color); /* Green text */
+}
+
+.daily-activity-log-section .summary-totals p {
+    margin: 0;
+}
+
+.activity-log {
+    margin-top: 20px;
+}
+
+.activity-item {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    border-radius: 8px;
+    margin-bottom: 10px; /* Space between items */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out details and actions */
+    align-items: center; /* Vertically align items */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 10px; /* Space between details and actions */
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-item .activity-details {
+    flex-grow: 1; /* Allow details to take available space */
+}
+
+.activity-item .activity-details p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.activity-item .activity-details p strong {
+    color: var(--secondary-color); /* Use secondary color for activity name */
+}
+
+.activity-item .actions {
+    display: flex;
+    gap: 5px; /* Space between buttons */
+    flex-shrink: 0; /* Prevent actions from shrinking */
+}
+
+.activity-item .actions button {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+     .date-navigation {
+        flex-wrap: wrap;
+    }
+    .date-navigation input[type="date"] {
+        max-width: 100%;
+    }
+    .add-activity-section, .daily-activity-log-section {
+        padding: 15px;
+    }
+     .activity-item {
+         flex-direction: column;
+         align-items: flex-start;
+     }
+     .activity-item .activity-details {
+         width: 100%; /* Details take full width */
+         margin-right: 0;
+     }
+     .activity-item .actions {
+         width: 100%; /* Actions take full width */
+         justify-content: flex-end; /* Align buttons to the right */
+     }
+}
